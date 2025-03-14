@@ -1,0 +1,169 @@
+<Html>
+  <head>
+  </head>
+  <body>
+    <!-- تلاش کا باکس -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="سورہ تلاش کریں...">
+    <button onclick="searchSurah()">تلاش کریں</button>
+  </div>
+  <style>
+  img {
+    animation: fadeIn 5s;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 12;
+    }
+  }
+  img {
+    animation: zoomIn 4s;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  img:hover {
+    animation: hoverAnim 1s;
+  }
+  
+  @keyframes hoverAnim {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  @keyframes left-right {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  body
+  {
+  background-image:url('WhatsApp Image 2025-03-10 at 1.06.07 PM (1).jpeg');
+  background-size:89%;
+  background-repeat:none;
+  background-postion:center;
+  
+  }
+  h2{color:yellowgreen;
+  font-family: asad;}
+  input[type="text"] {
+              padding: 10px;
+              width: 300px;
+              font-family: asad;
+              border-radius: 50px;
+              border: 2px solid black;
+          }
+          button {
+              padding: 10px 20px;
+              border-radius: 50px;
+              font-family: asad;
+              border: none;
+              font-size: 20px;
+              background-color:green;
+              color: #fff;
+              cursor: pointer;}
+
+  
+   li
+  {background-color: goldenrod;
+                  border: 3px solid black;
+                  border-radius: 90px;
+                
+                  width: 150px;
+                  height: 50px;
+                  line-height: 50px;
+                  text-align: center;
+                  font-size: 30px;
+                  background-position: center;}
+  a
+  {text-decoration: none;
+                  font-family: Jameel Noori Nastaleeq;
+                  font-size: 18px;
+                  color: darkred;
+                  text-align: center;}
+  
+  </style>
+  
+  <ul>
+  <div class="surah" id="surah7">
+    <H2>دعاگانی</H2>
+  
+  <li><a href="./imgs/duaagani.pdf" download="./imgs/duaagani.pdf" 
+  target="_blank">Download PDF</a></li></div>
+  <div class="surah" id="surah6">
+    <H2>یو سو لپی فکرونہ</H2> 
+  
+  <li><a href="./imgs/a.pdf" download="./imgs/a.pdf" target="_blank">Download PDF</a></li></div>
+  
+  <div class="surah" id="surah5">
+    <H2>وطنہ ستا لیونی</H2>
+  <li><a href="./imgs/watan.pdf" download="./imgs/watan.PDF" target="_blank">Download PDF</a></li>
+  </div>
+  
+  
+  <div class="surah" id="surah4">
+    <H2>کتاب الاصل  المعرف بالمبسوط</H2>
+
+  <li><a href="./imgs/asal.pdf" download="./imgs/asal.pdf" target="_blank">Download PDF</a></li>
+  </div>
+  
+  <!-- سورتیں -->
+  <div class="surah" id="surah1">
+      <h2>مفید الطالبین</h2>
+      <li><a href="./imgs/مفید الطالبین.pdf" download="./imgs/مفید الطالبین.pdf" target="_desktop">Download PDF</a></li>
+      
+  </div>
+  
+  <div class="surah" id="surah2">
+      <h2>دہ زخمی زڑہ آواز</h2>
+      
+      <li><a href="./imgs/my book.pdf" download="my book.pdf" target="_desktop">Download PDF</a></li></div>
+      <div class="surah" id="surah3">
+        <h2>فتوی</h2>
+        
+    <li><a href="./imgs/fatawa.pdf" download="fatawa.pdf" target="_desktop">Download PDF</a></li></div>
+  
+      </ul>
+  
+  <script>
+      // 
+      const ayahs = [
+  
+      ];
+      const randomAyah = ayahs[Math.floor(Math.random() * ayahs.length)];
+      document.getElementById('ayahText').innerText = randomAyah;
+  
+      // تلاش کا فنکشن
+      function searchSurah() {
+          let input = document.getElementById('searchInput').value.toLowerCase();
+          let surahs = document.getElementsByClassName('surah');
+          for (let surah of surahs) {
+              let title = surah.getElementsByTagName('h2')[0].innerText.toLowerCase();
+              if (title.includes(input)) {
+                  surah.style.display = "";
+              } else {
+                  surah.style.display = "none";
+              }
+          }
+      }
+  </script>
+  

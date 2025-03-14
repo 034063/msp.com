@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ur">
+    <head>
+        <style> 
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+            header {
+                background-color: greenyellow;
+                color: rgb(59, 7, 143);
+                font-size: 90px;
+                font-family: aslam;
+                padding: 10px;
+            }
+
+            header li {float: right;
+            display: inline;
+            padding: 0 20px 0 20px;}
+
+             header a {
+                text-decoration: none;
+                font-family: Jameel Noori Nastaleeq;
+                font-size: 50px;
+                color: darkred-;
+                text-align: center;
+            }
+            header #branding{
+                float: right: ;;
+                display:inline;
+                padding: 0 20px 0 20px;
+            }
+
+            h1 {
+                background-color: brown;
+                color: yellow;
+                width: 60%;
+                height: 60px;
+                text-align: center;
+                border-radius: 100px;
+                margin-left: auto;
+                font-family: Jameel Noori Nastaleeq;
+                border: 3px solid black;
+            }
+            h2{
+            background-color:white;
+                color: darkgreen;
+                width: 100px;
+                height: 60px;
+                text-align: center;
+                border-radius: 100px;
+                line-height:60px;
+                font-size: 25px;
+                font-family: Jameel Noori Nastaleeq;
+                border: 3px solid black;}
+
+            input[type="text"] {
+                padding: 10px;
+                font-size: 18px;
+                font-family:Jameel Noori Nastaleeq;
+                border: 2px solid black;
+                border-radius: 50px;
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 15px 15px;
+                background-color: #4CAF50;
+                color:darkblue;
+                font-size: 18px;
+                font-family:aslam;
+                border:3 solid gray;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color:red;
+
+    
+            }
+            #showcase{
+                min-height: 400px;
+                background:url('WhatsApp Image 2025-03-10 at 1.06.07 PM (1).jpeg') no-repeat;
+                background-position: 
+                center;background-size: cover;
+                text-align: center;
+                color: #ffffff;
+            }#showcase h3{
+                margin-top: 100px;
+                font-size: 80px;
+                color:yellowgreen;
+                font-family:aslam;
+                margin-bottom: 10px;
+                text-align: center;
+            
+                position: center;
+            }#showcase p{
+                font-size: 50px;
+                font-family: jameel noori nastaleeq;
+            }
+
+
+            footer {
+                text-align: center;
+                padding: 100px;
+                background-color: #333;
+                color: white;
+                font-size: 16px;
+                font-family: Jameel Noori Nastaleeq;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            
+<!-- تلاش کا باکس -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="سورہ تلاش کریں...">
+    <button onclick="searchSurah()">تلاش کریں</button>
+</div>
+            المکتبہ الشاملہ
+            پشتو زبان
+            <img src="./imgs/vecteezy_beautiful-quran-and-mosque_23338165.png" width="120" height="112">
+            <ul>
+                <li><a href="indox1.html">ھوم</a></li>
+                <li><a href="indox 3.html">کتابیں</a></li>
+                <li><a href="#.html">رابطہ</a></li>
+                <li><a href="indox (2).html">ڈاونلوڈ</a></li>
+            </ul>
+        </header> 
+        <section id="showcase">
+            <div class="container">
+                <h3>المکتبۃ الشاملہ پشتو زبان</h3>
+                <p>یہاں پر آپ کو ہر قسم اسلامی ،اصلاحی،تربیتی ،جہادی اور تاریخی  کتابیں ملی گی۔
+                </p>
+            </div>
+        </section>
+
+        <h1>ہماری ویب سایڈ پر خوش امدید</h1>
+    </body>
+</html>
+
+
+</div>
+
+<!-- سورتیں -->
+<div class="surah" id="surah1">
+    <h2>مفید الطالبین</h2>
+    <a href="مفید الطالبین.pdf" download="مفید الطالبین.pdf" target="_desktop">Download PDF</a>
+    
+</div>
+
+<div class="surah" id="surah2">
+    <h2>دہ زخمی زڑہ آواز</h2>
+    <a href="my book.pdf" download="my book.pdf" target="_desktop">Download PDF</a>
+</div><footer><h2>whatsapp</h2></footer>
+
+
+<script>
+    // 
+    const ayahs = [
+
+    ];
+    const randomAyah = ayahs[Math.floor(Math.random() * ayahs.length)];
+    document.getElementById('ayahText').innerText = randomAyah;
+
+    // تلاش کا فنکشن
+    function searchSurah() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let surahs = document.getElementsByClassName('surah');
+        for (let surah of surahs) {
+            let title = surah.getElementsByTagName('h2')[0].innerText.toLowerCase();
+            if (title.includes(input)) {
+                surah.style.display = "";
+            } else {
+                surah.style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>
